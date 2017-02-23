@@ -41,7 +41,7 @@ action :remove do
   remove_swapfile if ::File.exist?(new_resource.path)
 end
 
-action_class.class_eval do
+action_class do
   def do_create(command)
     create_swapfile(command)
     set_permissions
